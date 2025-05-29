@@ -1,4 +1,6 @@
 pytest
 selene==2.0.0rc9
 requests~=2.32.3
-allure-python-commons~=2.14.2
+allure-pytest
+allure-python-commons~=2.14.1
+jsonschema~=4.24.0

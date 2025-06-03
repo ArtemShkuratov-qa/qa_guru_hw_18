@@ -4,7 +4,7 @@ import requests
 from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 from selene import browser
-from src.api_requests import api_request
+from src.api_requests import sending_api_request
 from data.data import API_URL, LOGIN, PASSWORD
 
 @pytest.fixture(scope='function', autouse=True)
@@ -37,7 +37,7 @@ def add_first_featured_product_to_cart(api_authorization):
                "addtocart_74.EnteredQuantity=1")
 
     with step("Добавление первого продукта через API"):
-        result = api_request(
+        result = sending_api_request(
             API_URL,
             '/addproducttocart/details/74/1',
             headers={'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
@@ -52,7 +52,7 @@ def add_first_featured_product_to_cart(api_authorization):
 @pytest.fixture(scope='function')
 def add_second_featured_product_to_cart(api_authorization):
     with step("Добавление второго продукта через API"):
-        result = api_request(
+        result = sending_api_request(
             API_URL,
             '/addproducttocart/catalog/31/1/1',
             cookies={"NOPCOMMERCE.AUTH": api_authorization}
@@ -65,7 +65,7 @@ def add_second_featured_product_to_cart(api_authorization):
 @pytest.fixture(scope='function')
 def add_electronic_product_to_cart(api_authorization):
     with step("Добавление второго продукта через API"):
-        result = api_request(
+        result = sending_api_request(
             API_URL,
             '/addproducttocart/catalog/31/1/1',
             cookies={"NOPCOMMERCE.AUTH": api_authorization}

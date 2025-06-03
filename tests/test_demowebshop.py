@@ -7,7 +7,7 @@ def test_add_featured_products_to_cart(api_authorization, add_first_featured_pro
     cart.open_page(WEB_URL)
     cart.set_cookie(api_authorization, WEB_URL)
     cart.open_cart()
-    cart.number_of_positions(2)
+    cart.check_number_of_positions(2)
     cart.check_quantity('1')
 
 
@@ -15,5 +15,5 @@ def test_electronic_product_to_cart(api_authorization, add_electronic_product_to
     cart.open_page(WEB_URL)
     cart.set_cookie(api_authorization, WEB_URL)
     cart.open_cart()
-    cart.number_of_positions(1)
+    cart.check_number_of_positions(1)
     cart.check_quantity('1')

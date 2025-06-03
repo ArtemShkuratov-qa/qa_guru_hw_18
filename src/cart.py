@@ -21,7 +21,7 @@ class Cart():
 
 
     @allure.step('Проверяем количество добавленных позиций')
-    def number_of_positions(self, value):
+    def check_number_of_positions(self, value):
         browser.element('.cart').all('.cart-item-row').should(have.size(value))
 
 
